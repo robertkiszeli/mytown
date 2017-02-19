@@ -1,0 +1,186 @@
+{"cityName":"Kecskemét",
+  "categories":[{
+    "categoryName":"Látnivalók",
+    "places":[{
+      "placeName":"Városháza",
+      "placePicture":"townhall",
+      "latitude":46.906755,
+      "longitude":19.691796,
+      "web":"https://hu.wikipedia.org/wiki/V%C3%A1rosh%C3%A1za_(Kecskem%C3%A9t)",
+      "email":"null",
+      "phone":"null"
+    },{
+      "placeName":"Cifra Palota",
+      "placePicture":"cifra",
+      "latitude":46.908398,
+      "longitude":19.694738,
+      "web":"https://hu.wikipedia.org/wiki/Cifrapalota",
+      "email":"cifrapalota.kecskemet@gmail.com",
+      "phone":"003676480776"
+    },{
+      "placeName":"Nagytemplom",
+      "placePicture":"grandchurch",
+      "latitude":46.907545,
+      "longitude":19.691249,
+      "web":"https://hu.wikipedia.org/wiki/Nagytemplom_(Kecskem%C3%A9t)",
+      "email":"null",
+      "phone":"003676487501"
+    },{
+      "placeName":"Katona József Színház ",
+      "placePicture":"katona",
+      "latitude":46.904684,
+      "longitude":19.695192,
+      "web":"http://kecskemetikatona.hu/hu/fooldal.html",
+      "email":"titkarsag@kecskemetikatona.hu",
+      "phone":"003676501171"
+    },{
+      "placeName":"Benkó domb",
+      "placePicture":"domb",
+      "latitude":46.911267,
+      "longitude":19.664435,
+      "web":"https://hu.wikipedia.org/wiki/V%C3%ADzm%C5%B1domb",
+      "email":"null",
+      "phone":"0036202821128"
+    }]
+  },{
+    "categoryName":"Múzeumok",
+    "places":[{
+      "placeName":"Zsigóné Kati - A tojásdíszítés királynője",
+      "placePicture":"zsigo",
+      "latitude":46.894687,
+      "longitude":19.653485,
+      "web":"http://www.zsigonekati.com/bemutatkozas.php",
+      "email":"muvesz@zsigonekati.com",
+      "phone":"0036302149801"
+    },{
+      "placeName":"Népi Iparművészeti Múzeum",
+      "placePicture":"folk",
+      "latitude":46.902494,
+      "longitude":19.681177,
+      "web":"http://www.nepiiparmuveszet.hu/index.html",
+      "email":"muzeum.nepiipar@gmail.com",
+      "phone":"003676327203"
+    },{
+      "placeName":"Bozsó Gyüjtemény",
+      "placePicture":"bozso",
+      "latitude":46.905967,
+      "longitude":19.700314,
+      "web":"http://www.bozso.net/index.php?option=com_content&view=article&id=8&Itemid=12&lang=hu",
+      "email":"bozsoal@mail.datanet.hu ",
+      "phone":"003676324625"
+    },{
+      "placeName":"Katona József Múzeum",
+      "placePicture":"mkatona",
+      "latitude":46.912897,
+      "longitude":19.699294,
+      "web":"http://muzeum.kecskemet.hu/muzeumok/kjm.php",
+      "email":"kecskem1@t-online.hu",
+      "phone":"003676481122"
+    }]
+  },{
+    "categoryName":"Vendéglők",
+    "places":[{
+      "placeName":"Szélmalom Csárda",
+      "placePicture":"szelmalom",
+      "latitude":46.885125,
+      "longitude":19.707178,
+      "web":"http://szelmalomcsarda.gportal.hu/",
+      "email":"szelmalomcsarda@freemail.hu",
+      "phone":"003676509906"
+    },{
+      "placeName":"Sasfészek",
+      "placePicture":"sasfeszek",
+      "latitude":46.887885,
+      "longitude":19.622440,
+      "web":"http://sasfeszek.hu/",
+      "email":"sasfeszek@sasfeszek.t-online.hu",
+      "phone":"003676507567"
+    },{
+      "placeName":"Fekete Gólya",
+      "placePicture":"fekete",
+      "latitude":46.915272,
+      "longitude":19.793029,
+      "web":"http://feketegolya.hu/#null",
+      "email":"foglalas@feketegolya.hu ",
+      "phone":"003676702638"
+    },{
+      "placeName":"Bagatell",
+      "placePicture":"bagatell",
+      "latitude":46.905961,
+      "longitude":19.692277,
+      "web":"http://bagatelletterem.hu",
+      "email":"bagatell.bagatell@freemail.hu",
+      "phone":"003676402553"
+    }]
+  },{
+    "categoryName":"Szórakozás és kikapcsolódás",
+    "places":[{
+      "placeName":"Kecskeméti Fürdő",
+      "placePicture":"bath",
+      "latitude":46.901990,
+      "longitude":19.666551,
+      "web":"http://www.kecskemetifurdo.hu",
+      "email":"recepcio@kecskemetifurdo.hu",
+      "phone":"003676500320"
+    },{
+      "placeName":"Kecskemét Arborétum",
+      "placePicture":"arboretum",
+      "latitude":46.915639,
+      "longitude":19.658343,
+      "web":"http://www.kecskemetiarboretum.hu/",
+      "email":"arboretum@kefag.hu",
+      "phone":"003676492455"
+    },{
+      "placeName":"Kecskeméti Állatkert",
+      "placePicture":"zoo",
+      "latitude":46.897446,
+      "longitude":19.717772,
+      "web":"http://www.zookecskemet.hu/bemutatkozas/",
+      "email":"info@zookecskemet.hu",
+      "phone":"003676320121"
+    },{
+      "placeName":"Birizdokart - Gokart Pálya",
+      "placePicture":"kart",
+      "latitude":46.882664,
+      "longitude":19.697355,
+      "web":"http://gokart.birizdokart.hu/",
+      "email":"info@bizardokart.hu",
+      "phone":"0036308660602"
+    }]
+  },{
+    "categoryName":"Szállás",
+    "places":[{
+      "placeName":"Four Points By Sheraton",
+      "placePicture":"sheraton",
+      "latitude":46.897896,
+      "longitude":19.672951,
+      "web":"http://fourpointskecskemet.hu/",
+      "email":"null",
+      "phone":"003676888500"
+    },{
+      "placeName":"Fábián Panzió",
+      "placePicture":"fabian",
+      "latitude":46.909967,
+      "longitude":19.687687,
+      "web":"http://www.panziofabian.hu",
+      "email":"booking@panziofabian.hu",
+      "phone":"0036202571120"
+    },{
+      "placeName":"Hotel Három Gúnár",
+      "placePicture":"gunar",
+      "latitude":46.904445,
+      "longitude":19.691574,
+      "web":"http://www.hotelharomgunar.hu",
+      "email":"info@haromgunar.hu",
+      "phone":"003676483611"
+    },{
+      "placeName":"Hotel Aranyhomok",
+      "placePicture":"homok",
+      "latitude":46.908004,
+      "longitude":19.690727,
+      "web":"http://hotelaranyhomok.hu",
+      "email":"sales@hotelaranyhomok.hu",
+      "phone":"003676503730"
+    }]
+  }]
+}

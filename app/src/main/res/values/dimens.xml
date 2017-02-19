@@ -1,0 +1,45 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+
+    <dimen name="toolbar_elevation">6dp</dimen>
+    <dimen name="toolbar_text_size">16sp</dimen>
+
+    <dimen name="tab_elevation">6dp</dimen>
+    <dimen name="tab_indicator_height">5dp</dimen>
+
+    <dimen name="card_view_buttons_layout_padding_left_right">10dp</dimen>
+
+    <dimen name="custom_tab_text_size">16sp</dimen>
+
+    <!--PORTRAIT VIEW-->
+    <dimen name="card_view_height">240dp</dimen>
+    <dimen name="card_view_layout_margin">20dp</dimen>
+    <dimen name="card_view_elevation">8dp</dimen>
+    <dimen name="card_view_corner">8dp</dimen>
+
+    <dimen name="card_view_button_height">32dp</dimen>
+    <dimen name="card_view_button_width">32dp</dimen>
+    <dimen name="card_view_button_margin">5dp</dimen>
+
+    <dimen name="card_view_text_background_size">40dp</dimen>
+    <dimen name="card_view_text_padding">10dp</dimen>
+    <dimen name="card_view_text_size">16dp</dimen>
+
+    <!--LANDSCAPE VIEW-->
+    <dimen name="card_view_land_width">400dp</dimen>
+    <dimen name="card_view_land_height">200dp</dimen>
+    <dimen name="card_view_land_layout_margin">20dp</dimen>
+    <dimen name="card_view_land_elevation">8dp</dimen>
+    <dimen name="card_view_land_corner">8dp</dimen>
+
+    <dimen name="card_view_land_button_height">32dp</dimen>
+    <dimen name="card_view_land_button_width">32dp</dimen>
+    <dimen name="card_view_land_button_margin">5dp</dimen>
+
+    <dimen name="card_view_land_text_background_size">40dp</dimen>
+    <dimen name="card_view_land_text_padding">10dp</dimen>
+    <dimen name="card_view_land_text_size">16dp</dimen>
+
+</resources>
