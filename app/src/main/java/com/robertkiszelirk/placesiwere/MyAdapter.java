@@ -8,12 +8,14 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
@@ -138,12 +140,15 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
                     @Override
                     public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_CALL);
-                            intent.setData(Uri.parse("tel:" + phone));
                             if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                                Toast.makeText(view.getContext(),"Enable phone permission!",Toast.LENGTH_LONG).show();
                                 return;
+                            }else{
+                                Intent intent = new Intent(Intent.ACTION_CALL);
+                                intent.setData(Uri.parse("tel:" + phone));
+                                context.startActivity(intent);
                             }
-                            context.startActivity(intent);
+
                     }
                 });
             }
