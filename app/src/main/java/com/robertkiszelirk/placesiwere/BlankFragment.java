@@ -52,4 +52,5 @@ public class BlankFragment extends Fragment {
 
         return rootView;
     }
+
 }

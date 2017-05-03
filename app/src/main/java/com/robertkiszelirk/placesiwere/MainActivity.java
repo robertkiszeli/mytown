@@ -18,37 +18,38 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     BlankFragment blankFragment;
+    ViewPager viewPager;
+    PagerAdapter pagerAdapter;
 
     HandleJson jsonHandler;
     int selectedTab = 0;
+
+    Bundle savedInstance;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        savedInstance = savedInstanceState;
         if(savedInstanceState != null){
-            selectedTab = savedInstanceState.getInt("currentTab");
+            selectedTab = savedInstanceState.getInt(getString(R.string.current_tab_istate));
         }
         setData(selectedTab);
     }
 
     @Override
     public void onResume() {
-
         setData(selectedTab);
-
         super.onResume();
     }
 
     @Override
     protected void onPause() {
-
         super.onPause();
     }
 
     //THE PAGER ADAPTER
-    class PagerAdapter extends FragmentStatePagerAdapter {
+    private class PagerAdapter extends FragmentStatePagerAdapter {
 
         ArrayList<String> tabTitles = jsonHandler.getCategories();
         Context context;
@@ -101,8 +102,8 @@ public class MainActivity extends AppCompatActivity {
         toolbarTitle.setText(jsonHandler.getCityName());
 
         //GET VIEWPAGER AND SET PAGER ADAPTER TO IT
-        ViewPager viewPager = (ViewPager) findViewById(R.id.viewpager);
-        PagerAdapter pagerAdapter = new PagerAdapter(getSupportFragmentManager(), MainActivity.this);
+        viewPager = (ViewPager) findViewById(R.id.viewpager);
+        pagerAdapter = new PagerAdapter(getSupportFragmentManager(), MainActivity.this);
         viewPager.setAdapter(pagerAdapter);
 
         //SET VIEWPAGER TO TAB LAYOUT
@@ -129,8 +130,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(Bundle outState) {
 
-        outState.putInt("currentTab",selectedTab);
-
+        outState.putInt(getString(R.string.current_tab_istate),selectedTab);
         super.onSaveInstanceState(outState);
+
     }
 }

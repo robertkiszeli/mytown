@@ -7,7 +7,6 @@
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
     </style>
-
     <style name="CardViewStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/card_view_height</item>
@@ -16,7 +15,6 @@
         <item name="cardElevation">@dimen/card_view_elevation</item>
         <item name="cardCornerRadius">@dimen/card_view_corner</item>
     </style>
-
     <style name="CardViewButtonsStyle">
         <item name="android:layout_width">@dimen/card_view_button_width</item>
         <item name="android:layout_height">@dimen/card_view_button_height</item>
@@ -24,14 +22,12 @@
         <item name="android:scaleType">centerCrop</item>
         <item name="android:background">?attr/selectableItemBackgroundBorderless</item>
     </style>
-
     <style name="CardViewTextLinearLayoutStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">@dimen/card_view_text_background_size</item>
         <item name="android:background">@color/cardViewTextBackgroundColor</item>
         <item name="android:layout_alignParentBottom">true</item>
     </style>
-
     <style name="CardViewTextStyle">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
@@ -40,5 +36,4 @@
         <item name="android:textSize">@dimen/card_view_text_size</item>
         <item name="android:textColor">@color/cardViewTextColor</item>
     </style>
-
 </resources>

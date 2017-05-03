@@ -21,14 +21,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:scaleType="centerCrop"
-                    tools:ignore="ContentDescription"
-                    />
+                    tools:ignore="ContentDescription" />
                 <LinearLayout
                     style="@style/CardViewTextLinearLayoutStyle">
                     <TextView
                         android:id="@+id/card_view_text"
-                        style="@style/CardViewTextStyle"
-                        />
+                        style="@style/CardViewTextStyle" />
                 </LinearLayout>
             </RelativeLayout>
             <LinearLayout

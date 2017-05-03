@@ -3,15 +3,10 @@
     <color name="colorPrimary">#F44336</color>
     <color name="colorPrimaryDark">#B71C1C</color>
     <color name="colorAccent">#00C853</color>
-
     <color name="cardViewButtonsBackgroundColor">#FFFFFF</color>
     <color name="cardViewTextBackgroundColor">#CCB0BEC5</color>
     <color name="cardViewTextColor">#FFFFFF</color>
-
     <color name="toolBarColor">#D32F2F</color>
-
     <color name="customTabTextColor">#FFFFFF</color>
-
     <color name="appBackgroundColor">#C8E6C9</color>
-
 </resources>
