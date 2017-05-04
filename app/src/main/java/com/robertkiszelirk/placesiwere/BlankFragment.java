@@ -9,10 +9,15 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
 
 public class BlankFragment extends Fragment {
 
     JSONArray passPlace;
+    ArrayList<Place> places;
 
     MyAdapter adapter;
     RecyclerView rv;
@@ -42,8 +47,12 @@ public class BlankFragment extends Fragment {
         rv = (RecyclerView) rootView.findViewById(R.id.rv_recycler_view);
         rv.setHasFixedSize(true);
 
+        //Parse JSON
+        places = new ArrayList<>();
+        places = parseJson();
+
         //SET ADAPTER
-        adapter = new MyAdapter(passPlace, this.getContext());
+        adapter = new MyAdapter(places, this.getContext());
         rv.setAdapter(adapter);
 
         //SET LAYOUT MANAGER
@@ -51,6 +60,56 @@ public class BlankFragment extends Fragment {
         rv.setLayoutManager(llm);
 
         return rootView;
+    }
+
+    private ArrayList<Place> parseJson() {
+        // LIST FOR PLACES
+        ArrayList<Place> placesList = new ArrayList<>();
+
+        // PLACE DATA
+        String placeName;
+        String pictureName;
+        double latitude;
+        double longitude;
+        String link;
+        String email;
+        String phoneNumber;
+
+        // ITERATE THROUGH JSON ARRAY
+        for(int i = 0; i < passPlace.length(); i++){
+
+            try{
+                // SET JSON OBJECT
+                JSONObject place = passPlace.getJSONObject(i);
+
+                // GET AND SET PLACE DATA
+                placeName = place.getString("placeName");
+                pictureName = place.getString("placePicture");
+                latitude = place.getDouble("latitude");
+                longitude = place.getDouble("longitude");
+                link = place.getString("web");
+                email = place.getString("email");
+                phoneNumber = place.getString("phone");
+
+                // CREATE CURRENT PLACE
+                Place currentPlace = new Place(placeName,
+                        pictureName,
+                        latitude,
+                        longitude,
+                        link,
+                        email,
+                        phoneNumber);
+
+                // ADD PLACE TO LIST
+                placesList.add(currentPlace);
+
+            }catch(JSONException je){
+                je.printStackTrace();
+            }
+        }
+
+        // RETURN LIST
+        return placesList;
     }
 
 }

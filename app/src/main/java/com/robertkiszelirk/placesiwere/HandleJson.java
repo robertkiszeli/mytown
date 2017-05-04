@@ -9,9 +9,10 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Locale;
 
-public class HandleJson {
+class HandleJson {
 
     private JSONObject city;
     private JSONArray categories;
@@ -21,21 +22,19 @@ public class HandleJson {
     private ArrayList<String> categoriesList;
 
     //SETTING BASE JSON DATA
-    public void setJSON(Context context){
+    void setJSON(Context context){
 
         String json = null;
         try {
-            //GET CURRENT LANGUAGE
+            //SELECT LANGUAGE DATA
+            String[] supportLanguage = {"hu","en"};
             String language = Locale.getDefault().getLanguage();
             String file;
-
-            //SELECT LANGUAGE DATA
-            if(language.equals("hu")){
-                file = "datahu.json";
+            if(Arrays.asList(supportLanguage).contains(language)){
+                file = "data_" + language + ".json";
             }else{
-                file = "data.json";
+                file = "data_en.json";
             }
-
             //OPEN AND READ JSON
             InputStream is = context.getAssets().open(file);
             int size = is.available();
@@ -65,7 +64,7 @@ public class HandleJson {
     }
 
     //RETURNING CITY NAME
-    public String getCityName(){
+    String getCityName(){
 
         String returnS = "null";
 
@@ -79,13 +78,13 @@ public class HandleJson {
     }
 
     //RETURNING TABS LIST
-    public ArrayList<String> getCategories(){
+    ArrayList<String> getCategories(){
 
         return categoriesList;
     }
 
     //RETURNING PLACE OBJECT
-    public JSONArray getPlaceObject(int position){
+    JSONArray getPlaceObject(int position){
 
         try {
 

@@ -8,7 +8,6 @@ import android.net.Uri;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -19,21 +18,20 @@ import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+import java.util.ArrayList;
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    private JSONArray places;
+    //private JSONArray places;
+    private ArrayList<Place> places;
     private Context context;
+
 
     static class MyViewHolder extends RecyclerView.ViewHolder {
 
         CardView mCardView;
         ImageView mImageView;
         TextView mTextView;
-
 
         ImageButton placeButton;
         ImageButton webButton;
@@ -56,7 +54,9 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
     }
 
-    MyAdapter(JSONArray jArray, Context context) {places = jArray; this.context = context;}
+    MyAdapter(ArrayList<Place> places, Context context) {
+        this.places = places;
+        this.context = context;}
 
     //CREATE NEW VIEWS
     @Override
@@ -71,96 +71,89 @@ class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-        try{
+        // SET BASE PLACE DATA
+        final double lat = places.get(position).getLatitude();
+        final double lon = places.get(position).getLongitude();
+        final String web = places.get(position).getLink();
+        final String mail = places.get(position).getEmail();
+        final String phone = places.get(position).getPhoneNumber();
 
-            JSONObject place = places.getJSONObject(position);
+        holder.mTextView.setText(places.get(position).getPlaceName());
 
-            final double lat = place.getDouble("latitude");
-            final double lon = place.getDouble("longitude");
-            final String web = place.getString("web");
-            final String mail = place.getString("email");
-            final String phone = place.getString("phone");
+        String picName = places.get(position).getPictureName();
 
-            holder.mTextView.setText(place.getString("placeName"));
+        //SET CARD VIEW IMAGE
+        if(picName != null){
+            int resID = context.getResources().getIdentifier(picName,"drawable",context.getPackageName());
+            Glide.with(context).load(resID).into(holder.mImageView);
+        }
 
-            String picName = place.getString("placePicture");
+        //SHOW LOCATION
+        holder.placeButton.setOnClickListener(new View.OnClickListener() {
 
-            //SET CARD VIEW IMAGE
-            if(picName != null){
-                int resID = context.getResources().getIdentifier(picName,"drawable",context.getPackageName());
-                Glide.with(context).load(resID).into(holder.mImageView);
+            @Override
+            public void onClick(View view) {
+                    Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/loc:"+lat+","+lon);
+                    Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
+                    mapIntent.setPackage("com.google.android.apps.maps");
+                    context.startActivity(mapIntent);
             }
+        });
 
-            //SHOW LOCATION
-            holder.placeButton.setOnClickListener(new View.OnClickListener() {
+        //SET WEB BUTTON OR HIDE
+        if(web.equals("null")){
+            holder.webButton.setVisibility(View.GONE);
+        }else {
+            holder.webButton.setOnClickListener(new View.OnClickListener() {
 
                 @Override
                 public void onClick(View view) {
-                        Uri gmmIntentUri = Uri.parse("https://www.google.com/maps/search/loc:"+lat+","+lon);
-                        Intent mapIntent = new Intent(Intent.ACTION_VIEW, gmmIntentUri);
-                        mapIntent.setPackage("com.google.android.apps.maps");
-                        context.startActivity(mapIntent);
+                        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(web));
+                        context.startActivity(intent);
                 }
             });
-
-            //SET WEB BUTTON OR HIDE
-            if(web.equals("null")){
-                holder.webButton.setVisibility(View.GONE);
-            }else {
-                holder.webButton.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse(web));
-                            context.startActivity(intent);
-                    }
-                });
-            }
-
-            //SET EMAIL BUTTON OR HIDE
-            if(mail.equals("null")){
-                holder.emailButton.setVisibility(View.GONE);
-            }else {
-                holder.emailButton.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                            Intent intent = new Intent(Intent.ACTION_SENDTO);
-                            intent.setData(Uri.parse("mailto:" + mail));
-                            context.startActivity(intent);
-                    }
-                });
-            }
-
-            //SET PHONE BUTTON OR HIDE
-            if(phone.equals("null")){
-                holder.phoneButton.setVisibility(View.GONE);
-            }else {
-                holder.phoneButton.setOnClickListener(new View.OnClickListener() {
-
-                    @Override
-                    public void onClick(View view) {
-                            if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                                Toast.makeText(view.getContext(),"Enable phone permission!",Toast.LENGTH_LONG).show();
-                                return;
-                            }else{
-                                Intent intent = new Intent(Intent.ACTION_CALL);
-                                intent.setData(Uri.parse("tel:" + phone));
-                                context.startActivity(intent);
-                            }
-
-                    }
-                });
-            }
-        }catch(JSONException je){
-            je.printStackTrace();
         }
 
+        //SET EMAIL BUTTON OR HIDE
+        if(mail.equals("null")){
+            holder.emailButton.setVisibility(View.GONE);
+        }else {
+            holder.emailButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                        Intent intent = new Intent(Intent.ACTION_SENDTO);
+                        intent.setData(Uri.parse("mailto:" + mail));
+                        context.startActivity(intent);
+                }
+            });
+        }
+
+        //SET PHONE BUTTON OR HIDE
+        if(phone.equals("null")){
+            holder.phoneButton.setVisibility(View.GONE);
+        }else {
+            holder.phoneButton.setOnClickListener(new View.OnClickListener() {
+
+                @Override
+                public void onClick(View view) {
+                        if (ActivityCompat.checkSelfPermission(context, Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                            Toast.makeText(view.getContext(),"Enable phone permission!",Toast.LENGTH_LONG).show();
+                            return;
+                        }else{
+                            Intent intent = new Intent(Intent.ACTION_CALL);
+                            intent.setData(Uri.parse("tel:" + phone));
+                            context.startActivity(intent);
+                        }
+
+                }
+            });
+        }
     }
 
     @Override
     public int getItemCount() {
-        return places.length();
+        return places.size();//places.length();
     }
 
 }

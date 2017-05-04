@@ -41,22 +41,22 @@
                 <ImageButton
                     android:id="@+id/card_view_place_button"
                     style="@style/CardViewButtonsStyle"
-                    android:src="@drawable/place"
+                    android:src="@mipmap/place"
                     tools:ignore="ContentDescription"/>
                 <ImageButton
                     android:id="@+id/card_view_web_button"
                     style="@style/CardViewButtonsStyle"
-                    android:src="@drawable/web"
+                    android:src="@mipmap/web"
                     tools:ignore="ContentDescription"/>
                 <ImageButton
                     android:id="@+id/card_view_mail_button"
                     style="@style/CardViewButtonsStyle"
-                    android:src="@drawable/email"
+                    android:src="@mipmap/email"
                     tools:ignore="ContentDescription"/>
                 <ImageButton
                     android:id="@+id/card_view_phone_button"
                     style="@style/CardViewButtonsStyle"
-                    android:src="@drawable/phone"
+                    android:src="@mipmap/phone"
                     tools:ignore="ContentDescription"/>
             </LinearLayout>
         </LinearLayout>
