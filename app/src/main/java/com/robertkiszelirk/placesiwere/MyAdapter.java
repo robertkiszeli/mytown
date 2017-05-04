@@ -22,7 +22,7 @@ import java.util.ArrayList;
 
 class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
-    //private JSONArray places;
+    // LIST OF PLACES
     private ArrayList<Place> places;
     private Context context;
 
